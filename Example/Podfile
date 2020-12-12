@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'JZStatusBar_Example' do
+  pod 'JZStatusBar', :path => '../'
+
+  target 'JZStatusBar_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
