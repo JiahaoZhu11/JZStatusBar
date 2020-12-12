@@ -1,0 +1,41 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - JZBattery (1.1.0)
+  - JZStatusBar (0.1.0):
+    - AFNetworking (~> 4.0)
+    - JZBattery
+
+DEPENDENCIES:
+  - JZStatusBar (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - JZBattery
+
+EXTERNAL SOURCES:
+  JZStatusBar:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  JZBattery: db200b21397e60fa185b7b6bc432da0535a3785f
+  JZStatusBar: df6286c8449032192e90f3e42f1a93084ef20ec4
+
+PODFILE CHECKSUM: b0b5051bee56da95bf81ef7656d9efb755c669cd
+
+COCOAPODS: 1.10.0

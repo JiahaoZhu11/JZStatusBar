@@ -1,0 +1,6 @@
+framework module JZBattery {
+  umbrella header "JZBattery-umbrella.h"
+
+  export *
+  module * { export * }
+}
