@@ -11,6 +11,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+Minimum iOS Target: 9.0
+
 ## Installation
 
 JZStatusBar is available through [CocoaPods](https://cocoapods.org). To install
@@ -20,9 +22,19 @@ it, simply add the following line to your Podfile:
 pod 'JZStatusBar'
 ```
 
+## Usage
+
+`JZStatusBar` can be laid out via both the frame based layout and auto layout. It is can also be used in .xib, you can just simply place a UIView and change its class to `JZStatusBar`.
+
+```swift
+/* It is not necessary to be initialized with a frame */
+let statusBar = JZStatusBar(/*frame: <any CGRect>*/)
+view.addSubview(statusBar)
+```
+
 ## Author
 
-jiahao_zhu98@outlook.com, jiahao.zhu@maibaapp.cn
+朱嘉皓, jiahao_zhu98@outlook.com
 
 ## License
 

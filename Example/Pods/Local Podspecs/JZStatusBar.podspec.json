@@ -1,6 +1,6 @@
 {
   "name": "JZStatusBar",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "A simple customized status bar.",
   "description": "JZStatusBar is a simple customized status bar displaying the network status, time and battery status.",
   "homepage": "https://github.com/JiahaoZhu11/JZStatusBar",
@@ -13,8 +13,9 @@
   },
   "source": {
     "git": "https://github.com/JiahaoZhu11/JZStatusBar.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
+  "swift_versions": "4.0",
   "platforms": {
     "ios": "9.0"
   },
@@ -26,5 +27,6 @@
     "JZBattery": [
 
     ]
-  }
+  },
+  "swift_version": "4.0"
 }

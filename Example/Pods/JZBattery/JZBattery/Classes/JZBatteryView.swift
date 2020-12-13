@@ -1,6 +1,6 @@
 //
 //  JZBattery.swift
-//  JZVideoPlayer
+//  JZBattery
 //
 //  Created by Jiahao Zhu on 2020/12/11.
 //
@@ -12,6 +12,10 @@ fileprivate let standardWidth: CGFloat = 25
 @IBDesignable
 
 public class JZBatteryView: UIView {
+    
+    public enum ColorStyle {
+        case light, dark
+    }
     
     /// 电池状态改变回调
     public var batteryStateChangeCallback: ((UIDevice.BatteryState) -> ())?
@@ -33,6 +37,20 @@ public class JZBatteryView: UIView {
         }
     }
     
+    /// 配色风格
+    public var style: ColorStyle = .dark {
+        didSet {
+            switch style {
+            case .light:
+                borderColor = .black
+                fillingColor = .black
+            case .dark:
+                borderColor = .white
+                fillingColor = .white
+            }
+        }
+    }
+    
     /// 宽高比
     public var widthToHeightRatio: CGFloat = 2.5 {
         didSet {
@@ -42,14 +60,14 @@ public class JZBatteryView: UIView {
     
     private lazy var batteryBodyLayer: CAShapeLayer = {
         let layer = CAShapeLayer(layer: self.layer)
-        layer.strokeColor = UIColor.white.cgColor
+        layer.strokeColor = borderColor.cgColor
         layer.fillColor = UIColor.clear.cgColor
         return layer
     }()
     
     private lazy var batteryNodeLayer: CAShapeLayer = {
         let layer = CAShapeLayer(layer: self.layer)
-        layer.strokeColor = UIColor.white.cgColor
+        layer.strokeColor = borderColor.cgColor
         layer.fillColor = UIColor.clear.cgColor
         return layer
     }()
@@ -65,6 +83,10 @@ public class JZBatteryView: UIView {
     private var height: CGFloat = 0
     
     private var origin: CGPoint = CGPoint.zero
+    
+    private var borderColor: UIColor = .white
+    
+    private var fillingColor: UIColor = .white
     
     private var batteryState: UIDevice.BatteryState = {
         UIDevice.current.isBatteryMonitoringEnabled = true
@@ -153,7 +175,7 @@ public class JZBatteryView: UIView {
             if batteryLevel < 0.2 {
                 batteryFillingView.backgroundColor = .red
             } else {
-                batteryFillingView.backgroundColor = .white
+                batteryFillingView.backgroundColor = fillingColor
             }
         default:
             batteryFillingView.backgroundColor = .clear

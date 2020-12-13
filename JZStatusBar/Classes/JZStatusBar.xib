@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JZHorizontalStatusBar" customModule="JZVideoPlayer" customModuleProvider="target">
+            <connections>
+                <outlet property="batteryLabel" destination="FVx-5a-Fij" id="cA2-9y-j2a"/>
+                <outlet property="batteryView" destination="hyX-QP-BTi" id="VUa-aj-awa"/>
+                <outlet property="internetStatusLabel" destination="LjQ-1n-KEh" id="gC7-0E-9pV"/>
+                <outlet property="timeLabel" destination="Pad-19-WzL" id="cbW-LP-D8t"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未知" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjQ-1n-KEh" userLabel="Internet Status Label">
+                    <rect key="frame" x="2" y="440.5" width="25" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pad-19-WzL" userLabel="Time Label">
+                    <rect key="frame" x="190" y="440.5" width="34" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVx-5a-Fij" userLabel="Battery Label">
+                    <rect key="frame" x="365" y="441" width="19" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyX-QP-BTi" customClass="JZBatteryView" customModule="JZBattery">
+                    <rect key="frame" x="384" y="0.0" width="30" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="eln-9L-KyU"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="hyX-QP-BTi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1fG-IO-oqV"/>
+                <constraint firstItem="LjQ-1n-KEh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="IgD-VB-7gV"/>
+                <constraint firstItem="FVx-5a-Fij" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="LYm-4r-Hv1"/>
+                <constraint firstItem="LjQ-1n-KEh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="NPp-F6-bxt"/>
+                <constraint firstItem="hyX-QP-BTi" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="PFx-pS-rr7"/>
+                <constraint firstItem="Pad-19-WzL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="QDa-ZJ-zHX"/>
+                <constraint firstItem="FVx-5a-Fij" firstAttribute="trailing" secondItem="hyX-QP-BTi" secondAttribute="leading" id="RCs-5v-unh"/>
+                <constraint firstItem="hyX-QP-BTi" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="VKo-v7-k8B"/>
+                <constraint firstItem="Pad-19-WzL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oTc-E8-K0m"/>
+            </constraints>
+            <point key="canvasLocation" x="30" y="117"/>
+        </view>
+    </objects>
+</document>

@@ -41,6 +41,7 @@ The properties are listed below:
 | currentBatteryState        | Read-only    | It returns the current battery state.                        |
 | currentBatteryLevel        | Read-only    | It returns the current battery level, scaled from 0 to 1.    |
 | widthToHeightRatio         | Readwrite    | It represents the width : height ratio of the battery, the default value is 2.5. |
+| style                      | Readwrite    | It represents the color style of the battery, the default value is .dark. |
 | batteryStateChangeCallback | Readwrite    | It will be called after receiving a notification for the change in battery state. |
 | batteryLevelChangeCallback | Readwrite    | It will be called after receiving a notification for the change in battery level. |
 
