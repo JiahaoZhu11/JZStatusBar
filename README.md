@@ -32,6 +32,20 @@ let statusBar = JZStatusBar(/*frame: <any CGRect>*/)
 view.addSubview(statusBar)
 ```
 
+If you want to use `JZStatusBar` in .xib, uncomment line 13 to enable the `@IBDesignable` attribute, but you might need to add the following code to your podfile to work around the "Image Not Found" error:
+
+```ruby
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings['LD_RUNPATH_SEARCH_PATHS'] = [
+      '$(FRAMEWORK_SEARCH_PATHS)'
+    ]
+  end
+end
+```
+
+You can also check out issue [#5334](https://github.com/CocoaPods/CocoaPods/issues/5334) for any updates on this problem.
+
 ## Author
 
 朱嘉皓, jiahao_zhu98@outlook.com

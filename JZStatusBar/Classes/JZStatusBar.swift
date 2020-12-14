@@ -10,6 +10,8 @@ import AFNetworking
 import CoreTelephony
 import JZBattery
 
+// @IBDesignable
+
 public class JZStatusBar: UIView {
     
     @IBOutlet private weak var internetStatusLabel: UILabel!
