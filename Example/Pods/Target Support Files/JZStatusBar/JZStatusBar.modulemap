@@ -1,6 +1,0 @@
-framework module JZStatusBar {
-  umbrella header "JZStatusBar-umbrella.h"
-
-  export *
-  module * { export * }
-}
