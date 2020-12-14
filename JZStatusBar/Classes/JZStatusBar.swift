@@ -22,6 +22,8 @@ public class JZStatusBar: UIView {
     
     @IBOutlet private weak var batteryView: JZBatteryView!
     
+    private var statusBar: UIView?
+    
     private var networkStatus: AFNetworkReachabilityStatus = AFNetworkReachabilityManager.shared().networkReachabilityStatus {
         didSet {
             updateInternetStatus()
@@ -67,6 +69,11 @@ public class JZStatusBar: UIView {
                           CTRadioAccessTechnologyLTE: "4G"]
         }
         super.init(frame: frame)
+        statusBar = Bundle(for: JZStatusBar.self).loadNibNamed("JZStatusBar", owner: self, options: nil)?.first as? UIView
+        if let statusBar = statusBar {
+            addSubview(statusBar)
+            initStatusBar()
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -100,6 +107,11 @@ public class JZStatusBar: UIView {
                           CTRadioAccessTechnologyLTE: "4G"]
         }
         super.init(coder: coder)
+        statusBar = Bundle(for: JZStatusBar.self).loadNibNamed("JZStatusBar", owner: self, options: nil)?.first as? UIView
+        if let statusBar = statusBar {
+            addSubview(statusBar)
+            initStatusBar()
+        }
     }
     
     deinit {
@@ -109,11 +121,7 @@ public class JZStatusBar: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        if let view = Bundle(for: JZStatusBar.self).loadNibNamed("JZStatusBar", owner: self, options: nil)?.first as? UIView {
-            view.frame = bounds
-            addSubview(view)
-            initStatusBar()
-        }
+        statusBar?.frame = bounds
     }
     
     private func initStatusBar() {
@@ -156,7 +164,6 @@ public class JZStatusBar: UIView {
             internetStatusLabel.text = "无网络"
         case .reachableViaWWAN:
             internetStatusLabel.text = WWANString[networkInfo ?? ""]
-            internetStatusLabel.text = networkInfo
         case .reachableViaWiFi:
             internetStatusLabel.text = "Wi-Fi"
         default:
